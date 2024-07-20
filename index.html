@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cachipun</title>
+  </head>
+  <body>
+    <h1>cachipun</h1>
+
+    <script>
+      let juegos = prompt("Indica cuantas veces te gustaría jugar");
+
+    //variables de juego
+
+      let computerPlay = 0;
+      let jugada = "";
+
+
+        //for para reccorrer la cantidad de juegos y sus casos.
+      for (let i = 0; i < juegos; i++) {
+        //cantidad de veces a jugar
+         jugada = prompt("Escoge: Papel, Piedra o Tijera").toLowerCase();
+
+         //math random para generar la jugada de la computadora entre 0 y 2
+        computerPlay = Math.floor(Math.random() * 3);
+
+        if (computerPlay == 0) {
+          computerPlay = "papel";
+        } else if (computerPlay == 1) {
+          computerPlay = "piedra";
+        } else if (computerPlay == 2) {
+          computerPlay = "tijera";
+        }
+
+        // jugada empate
+
+        if (jugada == computerPlay) {
+          alert("es un empate, prueba nuevamente");
+        }
+        //console.log(computerPlay, "cpu");
+        //console.log(jugada, "player");
+
+        //jugada tijera
+
+        if (jugada == "tijera" && computerPlay == "piedra") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto pierdes, que lastima`
+          );
+        } else if (jugada == "tijera" && computerPlay == "papel") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto ganas, felicidades`
+          );
+        }
+
+        //jugada piedra
+        if (jugada == "piedra" && computerPlay == "tijera") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto ganas, felicidades`
+          );
+        } else if (jugada == "piedra" && computerPlay == "papel") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto pierdes, una lastima`
+          );
+        }
+
+        // jugada papel
+        if (jugada == "papel" && computerPlay == "tijera") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto pierdes, una lastima`
+          );
+        } else if (jugada == "papel" && computerPlay == "piedra") {
+          alert(
+            `Jugador escogio ${jugada} y la maquina ${computerPlay} por lo tanto ganas, felicidades`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
